@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Salary Data</title>
+		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+		<script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				Highcharts.chart('container', {
+				    chart: {
+				        type: 'bar'
+				    },
+				    title: {
+				        text: 'Candidate Salaries'
+				    },
+				    xAxis: {
+				        categories: ['Drew G. Faust','Nitin Nohria','Alan Garber','Michael Smith','Eric Lander','Mark Schlissel','Jim Yong Kim']
+				    },
+				    yAxis: {
+				        min: 0,
+				        title: {
+				            text: 'Total Salary'
+				        }
+				    },
+				    legend: {
+				        reversed: true
+				    },
+				    plotOptions: {
+				        series: {
+				            stacking: 'normal'
+				        }
+				    },
+				    series: [{
+				        name: 'Non-taxable compensation',
+				        data: [160403,126661,172441,106948,21307,13731,0]
+				    }, {
+				        name: 'Other Reportable Compensation & Bonuses',
+				        data: [551928,32032,14656,3524,27105,0,0]
+				    }, {
+				        name: 'Base Salary',
+				        data: [852920,566214,646158,566878,1036450,768750,492690]
+				    }]
+				});
+							
+			});
+		</script>	
+	</head>
+	<body>
+		<div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
+		<div id="dropdown" style = "text-align:center;"></div>
+				
+	</body>
+</html>

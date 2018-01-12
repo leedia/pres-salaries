@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Salary Data</title>
+		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+		<script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				Highcharts.chart('container', {
+				    chart: {
+				        type: 'column'
+				    },
+				    title: {
+				        text: 'University President Salaries'
+				    },
+				    xAxis: {
+				        categories: ['Drew G. Faust','Christina H. Paxson','Amy Gutmann','David J. Skorton (Cornell 2014)','Elizabeth Garrett (Cornell 2015)*','Christopher L. Eisgruber','Philip J. Hanlon','Lee C. Bollinger','Peter Salovey','John L. Henessey'],
+				        labels: {
+				        	useHTML:true,
+				        	formatter: function () {
+				        		return {
+				        			'Drew G. Faust': '<img src="images/harvard.png" height="25"/>&nbsp Harvard &nbsp&nbsp',
+				        			'Christina H. Paxson': '<img src="images/brown.png" height="25"/>&nbsp Brown &nbsp&nbsp',
+				        			'Amy Gutmann': '<img src="images/upenn.png" height="20"/>&nbsp UPenn &nbsp&nbsp',
+				        			'David J. Skorton (Cornell 2014)': '<img src="images/cornell.png" height="20"/>&nbsp Cornell (2014) &nbsp&nbsp',
+				        			'Elizabeth Garrett (Cornell 2015)*': '<img src="images/cornell.png" height="20"/>&nbsp Cornell (2015)* &nbsp&nbsp',
+				        			'Christopher L. Eisgruber': '<img src="images/princeton.png" height="20"/>&nbsp Princeton &nbsp&nbsp',
+				        			'Philip J. Hanlon': '<img src="images/dartmouth.png" height="20"/>&nbsp Dartmouth &nbsp&nbsp',
+				        			'Lee C. Bollinger': '<img src="images/columbia.png" height="20"/>&nbsp Columbia &nbsp&nbsp',
+				        			'Peter Salovey': '<img src="images/yale.png" height="25"/> Yale &nbsp',
+				        			'John L. Henessey': '<img src="images/stanford.png" height="20"/>&nbsp Stanford &nbsp&nbsp'
+				        		}[this.value];
+				        	}
+				        }
+				    },
+				    yAxis: {
+				        min: 0,
+				        title: {
+				            text: 'Total Salary'
+				        }
+				    },
+				    legend: {
+				        reversed: true
+				    },
+				    plotOptions: {
+				        series: {
+				            stacking: 'normal'
+				        }
+				    },
+				    series: [{
+				        name: 'Non-taxable compensation',
+				        data: [160403,38961,38548,110468,88703,79617,66278,418741,53741,219840]
+				    }, {
+				        name: 'Other Reportable Compensation & Bonuses',
+				        data: [551928,346530,1788675,635060,1841,77818,102311,748115,155663,0]
+				    }, {
+				        name: 'Base Salary',
+				        data: [852920,682000,1259172,872800,458583,781404,898777,1340781,948084,983094]
+				    }]
+				});
+							
+			});
+		</script>	
+	</head>
+	<body>
+		<div id="container" style="width: 800px; height: 600px; margin: 0 auto"></div>
+		<div id="dropdown" style = "text-align:center;"></div>
+				
+	</body>
+</html>
