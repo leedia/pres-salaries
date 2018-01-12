@@ -11,6 +11,7 @@
 			$(document).ready(function() {
 				
 				Highcharts.chart('container', {
+					colors: ['#004e6a','#29a848','#a82931'],
 				    chart: {
 				        type: 'column'
 				    },
@@ -18,21 +19,24 @@
 				        text: 'University President Salaries'
 				    },
 				    xAxis: {
+				    	title: {
+				    		text: '*Elizabeth Garrett passed away in office before the end of FY 2016'
+				    	},
 				        categories: ['Drew G. Faust','Christina H. Paxson','Amy Gutmann','David J. Skorton (Cornell 2014)','Elizabeth Garrett (Cornell 2015)*','Christopher L. Eisgruber','Philip J. Hanlon','Lee C. Bollinger','Peter Salovey','John L. Henessey'],
 				        labels: {
 				        	useHTML:true,
 				        	formatter: function () {
 				        		return {
-				        			'Drew G. Faust': '<img src="images/harvard.png" height="25"/>&nbsp Harvard &nbsp&nbsp',
-				        			'Christina H. Paxson': '<img src="images/brown.png" height="25"/>&nbsp Brown &nbsp&nbsp',
-				        			'Amy Gutmann': '<img src="images/upenn.png" height="20"/>&nbsp UPenn &nbsp&nbsp',
-				        			'David J. Skorton (Cornell 2014)': '<img src="images/cornell.png" height="20"/>&nbsp Cornell (2014) &nbsp&nbsp',
-				        			'Elizabeth Garrett (Cornell 2015)*': '<img src="images/cornell.png" height="20"/>&nbsp Cornell (2015)* &nbsp&nbsp',
-				        			'Christopher L. Eisgruber': '<img src="images/princeton.png" height="20"/>&nbsp Princeton &nbsp&nbsp',
-				        			'Philip J. Hanlon': '<img src="images/dartmouth.png" height="20"/>&nbsp Dartmouth &nbsp&nbsp',
-				        			'Lee C. Bollinger': '<img src="images/columbia.png" height="20"/>&nbsp Columbia &nbsp&nbsp',
-				        			'Peter Salovey': '<img src="images/yale.png" height="25"/> Yale &nbsp',
-				        			'John L. Henessey': '<img src="images/stanford.png" height="20"/>&nbsp Stanford &nbsp&nbsp'
+				        			'Drew G. Faust': '<img src="images/harvard.png" height="25"/> Harvard',
+				        			'Christina H. Paxson': '<img src="images/brown.png" height="25"/> Brown',
+				        			'Amy Gutmann': '<img src="images/upenn.png" height="20"/> UPenn',
+				        			'David J. Skorton (Cornell 2014)': '<img src="images/cornell.png" height="20"/> Cornell (2014)',
+				        			'Elizabeth Garrett (Cornell 2015)*': '<img src="images/cornell.png" height="20"/> Cornell (2015)*',
+				        			'Christopher L. Eisgruber': '<img src="images/princeton.png" height="20"/> Princeton',
+				        			'Philip J. Hanlon': '<img src="images/dartmouth.png" height="20"/> Dartmouth',
+				        			'Lee C. Bollinger': '<img src="images/columbia.png" height="20"/> Columbia',
+				        			'Peter Salovey': '<img src="images/yale.png" height="25"/> Yale',
+				        			'John L. Henessey': '<img src="images/stanford.png" height="20"/> Stanford'
 				        		}[this.value];
 				        	}
 				        }
